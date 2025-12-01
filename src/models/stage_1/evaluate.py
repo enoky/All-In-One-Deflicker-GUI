@@ -8,7 +8,7 @@ import matplotlib.image as mpimg
 import torch
 import colorsys
 from pathlib import Path
-from src.models.stage_1.loss_utils import get_rigidity_loss, get_optical_flow_loss_all, get_optical_flow_alpha_loss_all
+from .loss_utils import get_rigidity_loss, get_optical_flow_loss_all, get_optical_flow_alpha_loss_all
 
 import matplotlib.pyplot as plt
 import skimage.measure

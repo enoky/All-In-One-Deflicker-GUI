@@ -3,14 +3,14 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from src.models.stage_1.core.update import BasicUpdateBlock, SmallUpdateBlock
-from src.models.stage_1.core.extractor import BasicEncoder, SmallEncoder
-from src.models.stage_1.core.corr import CorrBlock, AlternateCorrBlock
+from .update import BasicUpdateBlock, SmallUpdateBlock
+from .extractor import BasicEncoder, SmallEncoder
+from .corr import CorrBlock, AlternateCorrBlock
 
 try:
-    from src.models.stage_1.utils.utils import bilinear_sampler, coords_grid, upflow8
+    from ..utils.utils import bilinear_sampler, coords_grid, upflow8
 except:
-    from src.models.stage_1.core.utils.utils import bilinear_sampler, coords_grid, upflow8
+    from .utils.utils import bilinear_sampler, coords_grid, upflow8
 
 try:
     autocast = torch.cuda.amp.autocast

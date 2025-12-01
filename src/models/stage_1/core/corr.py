@@ -1,10 +1,7 @@
 import torch
 import torch.nn.functional as F
 
-try:
-    from utils.utils import bilinear_sampler, coords_grid, upflow8
-except:
-    from src.models.stage_1.core.utils.utils import bilinear_sampler, coords_grid, upflow8
+from .utils.utils import bilinear_sampler, coords_grid, upflow8
     
 try:
     import alt_cuda_corr

@@ -3,7 +3,7 @@ import numpy as np
 import os
 from pathlib import Path
 import argparse
-from src.models.stage_1.raft_wrapper import RAFTWrapper
+from models.stage_1.raft_wrapper import RAFTWrapper
 
 from tqdm import tqdm
 

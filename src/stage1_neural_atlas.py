@@ -7,10 +7,10 @@ import cv2
 import glob
 from tqdm import tqdm
 
-from src.models.stage_1.implicit_neural_networks import IMLP
-from src.models.stage_1.evaluate import evaluate_model_single
-from src.models.stage_1.loss_utils import get_gradient_loss_single, get_rigidity_loss, get_optical_flow_loss
-from src.models.stage_1.unwrap_utils import get_tuples, pre_train_mapping, load_input_data_single, save_mask_flow
+from models.stage_1.implicit_neural_networks import IMLP
+from models.stage_1.evaluate import evaluate_model_single
+from models.stage_1.loss_utils import get_gradient_loss_single, get_rigidity_loss, get_optical_flow_loss
+from models.stage_1.unwrap_utils import get_tuples, pre_train_mapping, load_input_data_single, save_mask_flow
 
 import json
 from pathlib import Path

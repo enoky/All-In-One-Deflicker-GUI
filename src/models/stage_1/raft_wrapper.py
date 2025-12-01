@@ -8,9 +8,9 @@ from PIL import Image
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-from src.models.stage_1.core.utils.utils import InputPadder
-from src.models.stage_1.core.raft import RAFT
-from src.models.stage_1.core.utils import flow_viz
+from .core.utils.utils import InputPadder
+from .core.raft import RAFT
+from .core.utils import flow_viz
 
 class RAFTWrapper():
     def __init__(self, model_path, max_long_edge=900):
