@@ -39,7 +39,7 @@ if not torch.cuda.is_available():
     raise Exception("No GPU found, run with cpu")
     device = torch.device("cpu")
 else:
-    os.environ["CUDA_VISIBLE_DEVICES"]="0"
+    os.environ["CUDA_VISIBLE_DEVICES"]=f"{opts.gpu}"
     device = torch.device("cuda:{}".format(opts.gpu))
 
 # Define neural filter model

@@ -13,16 +13,20 @@ except:
     from .utils.utils import bilinear_sampler, coords_grid, upflow8
 
 try:
-    autocast = torch.cuda.amp.autocast
-except:
-    # dummy autocast for PyTorch < 1.6
-    class autocast:
-        def __init__(self, enabled):
-            pass
-        def __enter__(self):
-            pass
-        def __exit__(self, *args):
-            pass
+    # autocast was moved to torch.amp in PyTorch 1.6
+    from torch.cuda.amp import autocast
+except ImportError:
+    try:
+        from torch.amp import autocast
+    except ImportError:
+        # dummy autocast for PyTorch < 1.6
+        class autocast:
+            def __init__(self, enabled):
+                pass
+            def __enter__(self):
+                pass
+            def __exit__(self, *args):
+                pass
 
 
 class RAFT(nn.Module):

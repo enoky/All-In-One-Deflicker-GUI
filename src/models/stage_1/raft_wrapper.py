@@ -34,6 +34,10 @@ class RAFTWrapper():
             print(f'Error reading file: {fn}')
             sys.exit(1)
 
+        # If the image is grayscale, convert it to 3-channel
+        if img.ndim == 2:
+            img = np.stack((img,)*3, axis=-1)
+
         im_h = img.shape[0]
         im_w = img.shape[1]
         long_edge = max(im_w, im_h)
@@ -77,4 +81,3 @@ class RAFTWrapper():
         # map flow to rgb image
         img = flow_viz.flow_to_image(flo)
         return img
-
